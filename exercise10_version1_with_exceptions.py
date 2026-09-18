@@ -13,7 +13,7 @@ class Stack:
         if isinstance(maxSZ, int) and maxSZ > 0:
             self.maxSize=maxSZ
         else:
-            raise StackSizeError("Wrong size given, 10 used instead !")
+            raise StackSizeError(f"Wrong size given: {maxSZ} !")
             # self.maxSize=10 # => NOT NEEDED, the raise statements makes python leave
             # __init__()
         self.content=[]
@@ -54,7 +54,8 @@ class Stack:
         return len(self) == 0
 
 try:    
-    s1=Stack(10) # A Stack with a maximum size of 10 elements
+    s1=Stack(20) # A Stack with a maximum size of 10 elements
+
     s1.push(20.3)
     s1.push(3.5)
     s1.push(4.5)
@@ -87,4 +88,4 @@ try:
 except StackError as ex: # to handle all kinds of StackErrors
     print("Exception:", ex)
     
-# You can also handle separatly: StackFullError, StackEmptyErro, etc ...
+# You can also handle separatly: StackFullError, StackEmptyError, etc ...

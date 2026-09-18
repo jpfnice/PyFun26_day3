@@ -14,7 +14,8 @@ class Stack:
             self.maxSize=maxSZ
         else:
             raise StackSizeError("Wrong size given, 10 used instead !")
-            
+            # self.maxSize=10 # => NOT NEEDED, the raise statements makes python leave
+            # __init__()
         self.content=[]
         
     def __repr__(self):
@@ -38,6 +39,8 @@ class Stack:
     def pop(self):
         if len(self) <= 0:
             raise StackEmptyError("Sorry: the stack is empty!")
+            # return None # => NOT NEEDED, the raise statements makes python leave
+            # pop()
         else:
             return self.content.pop(-1)
         

@@ -58,7 +58,10 @@ class Stack:
         
     def isEmpty(self):
         return len(self) == 0
-        
+    
+    def __iter__(self):
+        return self.content.__iter__()
+    
 s1=Stack(10) # A Stack with a maximum size of 10 elements
 s1.push(20.3)
 s1.push(3.5)
@@ -86,7 +89,10 @@ print(s1==s2) # Should print True
 
 if 3.5 in s2: # if s2.__contains__(3.5):
     print("3.5 is present")
-    
+
+s2.push(100)
 for elt in s2:
     print(elt)
+    
+# __iter__ return an object and this object provide the method __next__   
     

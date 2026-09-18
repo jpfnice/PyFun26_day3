@@ -52,39 +52,40 @@ class Stack:
     def isEmpty(self):
         return len(self) == 0
 
-try:    
-    s1=Stack(20) # A Stack with a maximum size of 10 elements
-
-    s1.push(20.3)
-    s1.push(3.5)
-    s1.push(4.5)
-    print("S1 is", s1) # S1 is (3/10) [20.3, 3.5, 4.5]
+if __name__ == "__main__":
+    try:    
+        s1=Stack(20) # A Stack with a maximum size of 10 elements
     
-    print("Current size of s1 is", len(s1)) # Current size of s1 is 3
-    top=s1.pop()
-    print(top) # 4.5
-    print("Current size of s1 is", len(s1)) # Current size of s1 is 2
-    top=s1.peek()
-    print(top) # 3.5
-    print("Current size of s1 is", len(s1)) # Current size of s1 is 2
-    print("S1 is", s1)# S1 is (2/10) [20.3, 3.5]
-    if s1.isEmpty():
-        print("S1 is empty")
-    else:
-        print("S1 is not empty")
+        s1.push(20.3)
+        s1.push(3.5)
+        s1.push(4.5)
+        print("S1 is", s1) # S1 is (3/10) [20.3, 3.5, 4.5]
         
-    s2=Stack(10)
-    print(s1==s2) # Should print False
-    s2.push(20.3)
-    s2.push(3.5)
-    print(s1==s2) # Should print True
-    
-    if 3.5 in s2: # if s2.__contains__(3.5):
-        print("3.5 is present")
+        print("Current size of s1 is", len(s1)) # Current size of s1 is 3
+        top=s1.pop()
+        print(top) # 4.5
+        print("Current size of s1 is", len(s1)) # Current size of s1 is 2
+        top=s1.peek()
+        print(top) # 3.5
+        print("Current size of s1 is", len(s1)) # Current size of s1 is 2
+        print("S1 is", s1)# S1 is (2/10) [20.3, 3.5]
+        if s1.isEmpty():
+            print("S1 is empty")
+        else:
+            print("S1 is not empty")
+            
+        s2=Stack(10)
+        print(s1==s2) # Should print False
+        s2.push(20.3)
+        s2.push(3.5)
+        print(s1==s2) # Should print True
         
-    for elt in s2:
-        print(elt)
-except StackError as ex: # to handle all kinds of StackErrors
-    print("Exception:", ex)
-    
-# You can also handle separatly: StackFullError, StackEmptyError, etc ...
+        if 3.5 in s2: # if s2.__contains__(3.5):
+            print("3.5 is present")
+            
+        # for elt in s2:
+        #     print(elt)
+    except StackError as ex: # to handle all kinds of StackErrors
+        print("Exception:", ex)
+        
+    # You can also handle separatly: StackFullError, StackEmptyError, etc ...
